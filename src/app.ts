@@ -1,7 +1,7 @@
 class App {
 
   // missing interface. Read exercise below:
-  createUser(name: string): IUser {
+  createUser(name: string): User {
     return {
       id: 123,
       name: name,
@@ -13,7 +13,7 @@ class App {
   }
 }
 
-interface ISettings {
+interface Settings {
   settingA: number;
   settingB: number;
 }
@@ -21,17 +21,7 @@ interface ISettings {
 interface IUser {
   id: number
   name: string
-  settings: ISettings
-}
-
-class User implements IUser {
-  id: number;  
-  name: string;
-  settings: ISettings;
-  
-  constructor(name: string) {
-    this.name = name;
-  }
+  settings: Settings
 }
 
 let user = new App().createUser('Andreas');
